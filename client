@@ -68,7 +68,7 @@ while(True):
         elif X[0] == "fdiv":
             flodiv = float(X[1])/float(X[2])
             e1=str(flodiv)+"\n"
-            s.send(d1.encode())
+            s.send(e1.encode())
             print('result is ' %flodiv)
 
         response = s.recv(1024).decode()
