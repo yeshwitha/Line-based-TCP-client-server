@@ -28,7 +28,10 @@ while True:
 		if operator == "add":
 			a = random.randint(1,2000) #given random numbers from 1 to 2000
 			b = random.randint(1,3000) #given random numbers from 1 to 3000
+			Toperform = operator + " " + str(a) + " " + str(b)
 			addition = a + b
+			c.send(Toperform.encode())
+			result=c.recv(1024).decode()
 			print ("result is", addition)
 			if addition == int(result):
 				c.send("success\n".encode())
@@ -38,7 +41,10 @@ while True:
 		elif operator == "sub":
 			a = random.randint(1,2000)#given random numbers from 1 to 2000
 			b = random.randint(1,3000)#given random numbers from 1 to 3000
+			Toperform = operator + " " + str(a) + " " + str(b)
 			subtraction = a - b
+			c.send(Toperform.encode())
+			result=c.recv(1024).decode()
 			print ("result is", subtraction)
 			if subtraction == int(result):
 				c.send("success\n".encode())
@@ -49,8 +55,11 @@ while True:
 		elif operator == "mul":
 			a = random.randint(1,2000) #given random numebers from 1 to 2000
 			b = random.randint(1,3000) #given random numbers from 1 to 3000
+			Toperform = operator + " " + str(a) + " " + str(b)
 			multiplication = a * b
 			print ("result is", multiplication)
+			c.send(Toperform.encode())
+			result=c.recv(1024).decode()
 			if multiplication == int(result):
 				c.send("success\n".encode())
 				
@@ -60,7 +69,10 @@ while True:
 		elif operator == "div":
 			a = random.randint(1,2000) #given random numebers from 1 to 2000
 			b = random.randint(1,3000) #given random numbers from 1 to 3000
+			Toperform = operator + " " + str(a) + " " + str(b)
 			division = a / b
+			c.send(Toperform.encode())
+			result=c.recv(1024).decode()
 			print ('result is ' %division)
 			if division == float(result):
 				c.send("success\n".encode())
@@ -71,7 +83,10 @@ while True:
 		elif operator == "fadd":
 			a = random.uniform(1,2000) #given random numebers from 1 to 2000
 			b = random.uniform(1,3000) #given random numbers from 1 to 3000
+			Toperform = operator + " " + str(a) + " " + str(b)
 			faddition = a + b
+			c.send(Toperform.encode())
+			result=c.recv(1024).decode()
 			print ('result is ' %faddition)
 			if faddition == float(result):
 				c.send("success\n".encode())
@@ -82,7 +97,10 @@ while True:
 		elif operator == "fsub":
 			a = random.uniform(1,2000)#given random numebers from 1 to 2000
 			b = random.uniform(1,3000)#given random numbers from 1 to 3000
+			Toperform = operator + " " + str(a) + " " + str(b)
 			fsubtraction = a - b
+			c.send(Toperform.encode())
+			result=c.recv(1024).decode()
 			print ('result is ' %fsubtraction)
 			if fsubtraction == float(result):
 				c.send("success\n".encode())
@@ -93,7 +111,10 @@ while True:
 		elif operator == "fmul":
 			a = random.uniform(1,2000)#given random numebers from 1 to 2000
 			b = random.uniform(1,3000)#given random numbers from 1 to 3000
+			Toperform = operator + " " + str(a) + " " + str(b)
 			fmultiplication = a * b
+			c.send(Toperform.encode())
+			result=c.recv(1024).decode()
 			print ('result is ' %fmultiplication)
 			if fmultiplication == float(result):
 				c.send("success\n".encode())
@@ -104,8 +125,12 @@ while True:
 		elif operator == "fdiv":
 			a = random.uniform(1,2000)#given random numebers from 1 to 2000
 			b = random.uniform(1,3000)#given random numbers from 1 to 3000
+			Toperform = operator + " " + str(a) + " " + str(b)
 			fdivision = a / b
+			c.send(Toperform.encode())
+			result=c.recv(1024).decode()
 			print ('result is ' %fdivision)
+			
 			if fdivision == float(result):
 				c.send("success\n".encode())
 			
