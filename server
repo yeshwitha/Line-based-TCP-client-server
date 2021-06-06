@@ -11,6 +11,7 @@ split = Input.split(':')
 IP = str(split[0])
 port = int(split[1])
 s.bind((IP, port))
+s.listen(1)
 print("Server is active")
 
 #operations to perform are taken random for each input that is taken.
