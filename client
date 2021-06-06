@@ -51,25 +51,25 @@ while(True):
             floadd = float(X[1])+float(X[2])
             a1=str(floadd)+"\n"
             s.send(a1.encode())
-            print('result is ' %floadd)
+            print('result is %8.8g ' %floadd)
 
         elif X[0] == "fsub":
             flosub = float(X[1])-float(X[2])
             b1=str(flosub )+"\n"
             s.send(b1.encode())
-            print('result is ' %flosub)
+            print('result is %8.8g ' %flosub)
 
         elif X[0] == "fmul":
             flomul = float(X[1])*float(X[2])
             d1=str(flomul)+"\n"
             s.send(d1.encode())
-            print('result is ' %flomul)
+            print('result is %8.8g' %flomul)
 
         elif X[0] == "fdiv":
             flodiv = float(X[1])/float(X[2])
             e1=str(flodiv)+"\n"
             s.send(e1.encode())
-            print('result is ' %flodiv)
+            print('result is %8.8g' %flodiv)
 
         response = s.recv(1024).decode()
         print(response)
