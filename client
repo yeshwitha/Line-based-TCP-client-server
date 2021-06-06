@@ -13,9 +13,11 @@ IP= str(a[0])
 port= int(a[1])
 s.connect((IP, port))
 print("Connected to :",Input)
+print("The IP address of the server is:", IP)
+print("The port number of the server is:", port)
 
-firstmessage = s.recv(1024).decode()
-print("\n", firstmessage)
+firstmessage = s.recv(1024).decode() # to know what character set the string is encoded with.
+print("\n", firstmessage) 
 s.send("OK\n".encode())
 
 while(True):
