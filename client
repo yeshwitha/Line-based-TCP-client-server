@@ -1,0 +1,71 @@
+#!/usr/bin/python3
+
+import socket
+import sys
+
+
+s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+#creates a socket object with address of IPV4 type and TCP socket.
+
+Input= sys.argv[1]
+a= Input.split(':')
+IP= str(a[0])
+port= int(a[1])
+s.connect((IP, port))
+print("Connected to :",Input)
+
+firstmessage = s.recv(1024).decode()
+print("\n", firstmessage)
+s.send("OK\n".encode())
+
+while(True):
+    print(firstmessage)
+    X=firstmessage.split()
+    if len(X) > 1:
+
+        if X[0] == "add":
+            adds = int(X[1])+int(X[2])
+            a1=str(adds)+"\n"
+            print("result is ",str(adds) )
+
+        elif X[0] == "sub":
+            subs = int(X[1])-int(X[2])
+            b1=str(subs)+"\n"
+            print("result is ", str(subs ))
+            
+        elif X[0] == "mul":
+            muls = int(X[1])*int(X[2])
+            d1=str(muls)+"\n"
+            print("result is ", str(muls))
+
+        elif X[0] == "div":
+            divs = int(X[1])/int(X[2])
+            e1=str(divs)+"\n"
+            print('result is ', str(divs))
+
+        elif X[0] == "fadd":
+            floadd = float(X[1])+float(X[2])
+            a1=str(floadd)+"\n"
+            print('result is ' %floadd)
+
+        elif X[0] == "fsub":
+            flosub = float(X[1])-float(X[2])
+            b1=str(flosub )+"\n"
+            print('result is ' %flosub)
+
+        elif X[0] == "fmul":
+            flomul = float(X[1])*float(X[2])
+            d1=str(flomul)+"\n"
+            print('result is ' %flomul)
+
+        elif X[0] == "fdiv":
+            flodiv = float(X[1])/float(X[2])
+            e1=str(flodiv)+"\n"
+            print('result is ' %flodiv)
+
+        response = s.recv(1024).decode()
+        print(response)
+    break
+
+
+s.close
