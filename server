@@ -1,0 +1,122 @@
+#!/usr/bin/python3
+
+import socket		 	            
+import sys
+
+s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+
+Input = sys.argv[1]
+split = Input.split(':')
+IP = str(split[0])
+port = int(split[1])
+s.bind((IP, port))
+print("Server is active")
+
+#operations to perform are taken random for each input that is taken.
+
+Operations = ["add", "sub", "mul", "div", "fadd", "fsub", "fmul", "fdiv"]
+
+while True:
+	c, addr = s.accept()
+	print("Connected to :",Input)
+	c.send("TEXT TCP 1.0\n".encode())
+	Message = c.recv(1024).decode()
+	print(Message)
+
+	while True:
+		operator = random.choice (Operations)
+		if operator == "add":
+			a = random.randint(1,2000) #given random numbers from 1 to 2000
+			b = random.randint(1,3000) #given random numbers from 1 to 3000
+			addition = a + b
+			print ("result is", addition)
+			if addition == int(result):
+				c.send("success\n".encode())
+			else:
+				c.send("failure\n".encode())
+
+		elif operator == "sub":
+			a = random.randint(1,2000)#given random numbers from 1 to 2000
+			b = random.randint(1,3000)#given random numbers from 1 to 3000
+			subtraction = a - b
+			print ("result is", subtraction)
+			if subtraction == int(result):
+				c.send("success\n".encode())
+				
+			else:
+				c.send("failure\n".encode())
+
+		elif operator == "mul":
+			a = random.randint(1,2000) #given random numebers from 1 to 2000
+			b = random.randint(1,3000) #given random numbers from 1 to 3000
+			multiplication = a * b
+			print ("result is", multiplication)
+			if multiplication == int(result):
+				c.send("success\n".encode())
+				
+			else:
+				c.send("failure\n".encode())
+
+		elif operator == "div":
+			a = random.randint(1,2000) #given random numebers from 1 to 2000
+			b = random.randint(1,3000) #given random numbers from 1 to 3000
+			division = a / b
+			print ('result is ' %division)
+			if division == float(result):
+				c.send("success\n".encode())
+				
+			else:
+				c.send("failure\n".encode())
+
+		elif operator == "fadd":
+			a = random.uniform(1,2000) #given random numebers from 1 to 2000
+			b = random.uniform(1,3000) #given random numbers from 1 to 3000
+			faddition = a + b
+			print ('result is ' %faddition)
+			if faddition == float(result):
+				c.send("success\n".encode())
+				
+			else:
+				c.send("failure\n".encode())
+
+		elif operator == "fsub":
+			a = random.uniform(1,2000)#given random numebers from 1 to 2000
+			b = random.uniform(1,3000)#given random numbers from 1 to 3000
+			fsubtraction = a - b
+			print ('result is ' %fsubtraction)
+			if fsubtraction == float(result):
+				c.send("success\n".encode())
+				
+			else:
+				c.send("failure\n".encode())
+
+		elif operator == "fmul":
+			a = random.uniform(1,2000)#given random numebers from 1 to 2000
+			b = random.uniform(1,3000)#given random numbers from 1 to 3000
+			fmultiplication = a * b
+			print ('result is ' %fmultiplication)
+			if fmultiplication == float(result):
+				c.send("success\n".encode())
+				
+			else:
+				c.send("failure\n".encode())
+
+		elif operator == "fdiv":
+			a = random.uniform(1,2000)#given random numebers from 1 to 2000
+			b = random.uniform(1,3000)#given random numbers from 1 to 3000
+			fdivision = a / b
+			print ('result is ' %fdivision)
+			if fdivision == float(result):
+				c.send("success\n".encode())
+			
+			else:
+				c.send("failure\n".encode())
+
+
+			
+		else:
+    			print("Invalid input Please give the correct information")
+		break
+
+
+c.close() #close the connection
