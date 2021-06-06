@@ -26,41 +26,49 @@ while(True):
         if X[0] == "add":
             adds = int(X[1])+int(X[2])
             a1=str(adds)+"\n"
+            s.send(a1.encode())
             print("result is ",str(adds) )
 
         elif X[0] == "sub":
             subs = int(X[1])-int(X[2])
             b1=str(subs)+"\n"
+            s.send(b1.encode())
             print("result is ", str(subs ))
             
         elif X[0] == "mul":
             muls = int(X[1])*int(X[2])
             d1=str(muls)+"\n"
+            s.send(d1.encode())
             print("result is ", str(muls))
 
         elif X[0] == "div":
             divs = int(X[1])/int(X[2])
             e1=str(divs)+"\n"
+            s.send(e1.encode())
             print('result is ', str(divs))
 
         elif X[0] == "fadd":
             floadd = float(X[1])+float(X[2])
             a1=str(floadd)+"\n"
+            s.send(a1.encode())
             print('result is ' %floadd)
 
         elif X[0] == "fsub":
             flosub = float(X[1])-float(X[2])
             b1=str(flosub )+"\n"
+            s.send(b1.encode())
             print('result is ' %flosub)
 
         elif X[0] == "fmul":
             flomul = float(X[1])*float(X[2])
             d1=str(flomul)+"\n"
+            s.send(d1.encode())
             print('result is ' %flomul)
 
         elif X[0] == "fdiv":
             flodiv = float(X[1])/float(X[2])
             e1=str(flodiv)+"\n"
+            s.send(d1.encode())
             print('result is ' %flodiv)
 
         response = s.recv(1024).decode()
