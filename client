@@ -21,8 +21,9 @@ print("\n", firstmessage)
 s.send("OK\n".encode())
 
 while(True):
-    print(firstmessage)
-    X=firstmessage.split()
+    message=s.recv(1024).decode()
+    print(message)
+    X=message.split()
     if len(X) > 1:
 
         if X[0] == "add":
