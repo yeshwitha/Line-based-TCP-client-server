@@ -75,7 +75,7 @@ while True:
 			division = a / b
 			c.send(Toperform.encode())
 			result=c.recv(1024).decode()
-			print ('result is ' %division)
+			print ('result is %8.8g' %division)
 			if division == float(result):
 				c.send("success\n".encode())
 				
@@ -89,7 +89,7 @@ while True:
 			faddition = a + b
 			c.send(Toperform.encode())
 			result=c.recv(1024).decode()
-			print ('result is %8.8g  ' %faddition)
+			print ('result is %8.8g' %faddition)
 			if faddition == float(result):
 				c.send("success\n".encode())
 				
@@ -131,7 +131,7 @@ while True:
 			fdivision = a / b
 			c.send(Toperform.encode())
 			result=c.recv(1024).decode()
-			print ('result is %8.8g ' %fdivision)
+			print ('result is %8.8g' %fdivision)
 			
 			if fdivision == float(result):
 				c.send("success\n".encode())
