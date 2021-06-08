@@ -48,7 +48,7 @@ while(True):
             divs = int(X[1])/int(X[2])
             e1=str(divs)+"\n"
             s.send(e1.encode())
-            print('result is ', str(divs))
+            print('result is %8.8g ', str(divs))
 
         elif X[0] == "fadd":
             floadd = float(X[1])+float(X[2])
