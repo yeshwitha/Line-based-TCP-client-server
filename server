@@ -34,7 +34,7 @@ while True:
 			addition = a + b
 			c.send(Toperform.encode())
 			result=c.recv(1024).decode()
-			print ("result is", addition)
+			print ("result is", %addition)
 			if addition == int(result):
 				c.send("success\n".encode())
 			else:
@@ -47,7 +47,7 @@ while True:
 			subtraction = a - b
 			c.send(Toperform.encode())
 			result=c.recv(1024).decode()
-			print ("result is", subtraction)
+			print ("result is", %ubtraction)
 			if subtraction == int(result):
 				c.send("success\n".encode())
 				
@@ -59,7 +59,7 @@ while True:
 			b = random.randint(1,3000) #given random numbers from 1 to 3000
 			Toperform = operator + " " + str(a) + " " + str(b)
 			multiplication = a * b
-			print ("result is", multiplication)
+			print ("result is", %mutiplication)
 			c.send(Toperform.encode())
 			result=c.recv(1024).decode()
 			if multiplication == int(result):
@@ -75,7 +75,7 @@ while True:
 			division = a / b
 			c.send(Toperform.encode())
 			result=c.recv(1024).decode()
-			print ('result is ' division)
+			print ('result is ' %ivision)
 			if division == float(result):
 				c.send("success\n".encode())
 				
