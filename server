@@ -75,7 +75,7 @@ while True:
 			division = a / b
 			c.send(Toperform.encode())
 			result=c.recv(1024).decode()
-			print ('result is ' %division)
+			print ('result is ' division)
 			if division == float(result):
 				c.send("success\n".encode())
 				
